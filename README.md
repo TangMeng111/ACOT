@@ -25,7 +25,8 @@
 This project addresses the domain shift challenge in medical image segmentation, where models trained on labeled source domains fail to generalize to unlabeled target domains. We propose a novel unsupervised domain adaptation (UDA) approach that leverages:
 - **Non-negative Matrix Factorization (NMF)** to extract semantic concepts from medical images.
 - **Optimal Transport (OT)** to align these concepts across source and target domains without target annotations.
-[Framework Architecture for NMF-OT Concept Alignment](imgs/framework_architecture.png)
+
+![Framework Architecture for NMF-OT Concept Alignment](imgs/framework_architecture.png)
 *Figure 1: Schematic diagram of our NMF-OT based unsupervised domain adaptation framework.
 
 
