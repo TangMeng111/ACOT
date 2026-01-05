@@ -70,50 +70,42 @@ data/
 │   └── labels/          # BraTS 2021 manual annotations
 └── target_tcia_lgg/
     └── images/          # TCIA-LGG MRI images (NIfTI format)
-Usage
+```
+## Usage
 All core scripts are in the scripts/ directory. Modify hyperparameters in configs/main_config.yaml before running.
-Training
+
+## Training
 Train the NMF-OT UDA model on BraTS 2021 (source) and TCIA-LGG (target):
-bash
-运行
+```bash
 python scripts/train_uda.py --config configs/main_config.yaml
+```
 Training logs are saved to logs/
 Model checkpoints are saved to checkpoints/ (default: every 5 epochs)
-Inference
+
+## Inference
 Run segmentation on unlabeled TCIA-LGG images with a trained model:
-bash
-运行
+```bash
 python scripts/infer.py \
   --config configs/main_config.yaml \
   --checkpoint checkpoints/best_model.pth \
   --input_dir data/target_tcia_lgg/images \
   --output_dir results/predictions
-Evaluation
+```
+## Evaluation
 Evaluate segmentation performance (requires TCIA-LGG ground truth labels for validation):
-bash
-运行
+```bash
 python scripts/evaluate.py \
   --pred_dir results/predictions \
   --gt_dir data/target_tcia_lgg/labels \
   --metrics dsc iou hd95
+```
 Evaluation results are saved to results/evaluation_metrics.csv
-Experimental Results
-Quantitative Results
-Comparison with state-of-the-art UDA methods on TCIA-LGG (brain tumor segmentation):
-Method	DSC (Whole Tumor)	IoU (Whole Tumor)	HD95 (mm)
-DANN + UNet	0.721 ± 0.032	0.615 ± 0.041	12.3 ± 2.1
-CycleGAN + UNet	0.753 ± 0.028	0.652 ± 0.035	10.1 ± 1.8
-AdaptSegNet	0.784 ± 0.021	0.682 ± 0.029	8.5 ± 1.5
-Ours (NMF-OT)	0.812 ± 0.019	0.705 ± 0.027	7.2 ± 1.2
-Note: Results are averaged over 5 independent runs. Lower HD95 = better segmentation accuracy.
-Qualitative Results
 
-image
-Citation
+<!-- ## Citation
 If this work contributes to your research, please cite our paper:
 bibtex
-@article{zhang2025nmfot,
-  title={NMF-OT Concept Alignment for Unsupervised Domain Adaptation in Medical Image Segmentation},
+@article{Tang2025OTCA,
+  title={Unsupervised Domain Adaptation for Cross-Modal Medical Image Segmentation via OT-Based Concept Alignment},
   author={Zhang, Wei and Li, Ming and Wang, Jun},
   journal={IEEE Transactions on Medical Imaging},
   year={2025},
@@ -122,23 +114,15 @@ bibtex
   pages={567--579},
   doi={10.1109/TMI.2024.3456789}
 }
-Contributing
-We welcome contributions from the community! Here's how to contribute:
-Fork the repository to your GitHub account.
-Create a feature branch: git checkout -b feature/your-feature-name.
-Commit your changes with clear messages: git commit -m "Add X feature: fix Y bug".
-Push to your branch: git push origin feature/your-feature-name.
-Open a Pull Request (PR) to the main branch of the original repository.
-Contribution Guidelines
-Follow PEP 8 for Python code style.
-Add unit tests for new features (in tests/ directory).
-Update the README if your changes affect usage/installation.
-License
-This project is licensed under the MIT License - see the LICENSE file for details. The MIT License allows free use, modification, and distribution for both commercial and non-commercial purposes.
-Acknowledgements
+-->
+
+## Acknowledgements
 This research is supported by the National Natural Science Foundation of China (Grant No. 12345678).
 We thank the BraTS and TCIA consortia for providing open access to medical image datasets.
 We use the POT (Python Optimal Transport) library for OT computations and MONAI for medical image processing.
 Special thanks to the open-source community for the UNet implementation and UDA baselines.
+
+## License
+This project is licensed under the MIT License - see the LICENSE file for details. The MIT License allows free use, modification, and distribution for both commercial and non-commercial purposes.
 
 
