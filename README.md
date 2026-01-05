@@ -7,7 +7,7 @@
 [![CUDA 11.3+](https://img.shields.io/badge/CUDA-11.3%2B-green.svg)](https://developer.nvidia.com/cuda-toolkit)
 [![GitHub Stars](https://img.shields.io/github/stars/your-username/ot-segmentation-sdm?style=social)](https://github.com/your-username/ot-segmentation-sdm)
 
-## Table of Contents
+<!-- ## Table of Contents
 - [Overview](#overview)
 - [Key Features](#key-features)
 - [Installation](#installation)
@@ -20,6 +20,7 @@
 - [Contributing](#contributing)
 - [License](#license)
 - [Acknowledgements](#acknowledgements)
+-->
 
 ## Overview
 This project addresses the domain shift challenge in medical image segmentation, where models trained on labeled source domains fail to generalize to unlabeled target domains. We propose a novel unsupervised domain adaptation (UDA) approach that leverages:
