@@ -125,11 +125,9 @@ bibtex
 
 ## Acknowledgements
 <!--This research is supported by the National Natural Science Foundation of China (Grant No. 12345678).-->
-We thank the MM-WHS Challenge, CHAOS Challenge, and Synapse for providing open access to medical image datasets. The preprocessed MM-WHS dataset used in this work is derived from the resource provided in the paper *Enhancing Cross-Modal Medical Image Segmentation through Compositionality*, and we sincerely acknowledge its authors for making the data publicly available.
-
-We use the POT (Python Optimal Transport) library for optimal transport computations and MONAI for medical image preprocessing and analysis.
-
-Special thanks to the open-source community for the existing unsupervised domain adaptation (UDA) baselines, which laid a solid foundation for this research.
+We thank the MM-WHS Challenge, CHAOS Challenge, and Synapse for providing open access to medical image datasets. <br>
+We use the POT (Python Optimal Transport) library for optimal transport computations and MONAI for medical image preprocessing and analysis.<br>
+Special thanks to the open-source community for the existing unsupervised domain adaptation (UDA) baselines, which laid a solid foundation for this research.<br>
 ## License
 This project is licensed under the [MIT License](LICENSE). For detailed terms, please refer to the [LICENSE](LICENSE) file in the root directory of this repository.
 
