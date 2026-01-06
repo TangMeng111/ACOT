@@ -47,7 +47,7 @@ Ensure you have the following installed:
 
 ### Step 1: Clone the Repository
 ```bash
-git clone https://github.com/your-username/medical-image-uda.git
+git clone https://github.com/TangMeng111/OTCA.git
 cd medical-image-uda
 ```
 ### Step 2: Create a Conda Environment
