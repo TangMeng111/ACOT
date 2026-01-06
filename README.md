@@ -5,7 +5,7 @@
 [![Python 3.8+](https://img.shields.io/badge/Python-3.8%2B-blue.svg)](https://www.python.org/)
 [![PyTorch 1.10+](https://img.shields.io/badge/PyTorch-1.10%2B-red.svg)](https://pytorch.org/)
 [![CUDA 11.3+](https://img.shields.io/badge/CUDA-11.3%2B-green.svg)](https://developer.nvidia.com/cuda-toolkit)
-[![GitHub Stars](https://img.shields.io/github/stars/your-username/ot-segmentation-sdm?style=social)](https://github.com/your-username/ot-segmentation-sdm)
+[![GitHub Stars](https://img.shields.io/github/stars/TangMeng111/OTCA?style=social)](https://github.com/TangMeng111/OTCA)
 
 <!-- ## Table of Contents
 - [Overview](#overview)
@@ -78,7 +78,7 @@ data/MMWHS_process
     └── images/          # MMWHS MRI images (NIfTI format)
 ```
 ## Usage
-All core codes of this project will be publicly released in the GitHub repository soon after acceptance of our paper. 
+All core codes of this project will be **publicly released in the GitHub repository soon** after acceptance of our paper. 
 <!--All core scripts are in the scripts/ directory. Modify hyperparameters in configs/main_config.yaml before running.
 
 ## Training
@@ -125,8 +125,10 @@ bibtex
 
 ## Acknowledgements
 <!--This research is supported by the National Natural Science Foundation of China (Grant No. 12345678).-->
-We thank the MM-WHS Challenge, CHAOS Challenge, Synapse, and TCIA consortia for providing open access to medical image datasets. The preprocessed MM-WHS dataset used in this work is derived from the resource provided in the paper *Enhancing Cross-Modal Medical Image Segmentation through Compositionality*, and we sincerely acknowledge its authors for making the data publicly available.
+We thank the MM-WHS Challenge, CHAOS Challenge, and Synapse for providing open access to medical image datasets. The preprocessed MM-WHS dataset used in this work is derived from the resource provided in the paper *Enhancing Cross-Modal Medical Image Segmentation through Compositionality*, and we sincerely acknowledge its authors for making the data publicly available.
+
 We use the POT (Python Optimal Transport) library for optimal transport computations and MONAI for medical image preprocessing and analysis.
+
 Special thanks to the open-source community for the existing unsupervised domain adaptation (UDA) baselines, which laid a solid foundation for this research.
 ## License
 This project is licensed under the [MIT License](LICENSE). For detailed terms, please refer to the [LICENSE](LICENSE) file in the root directory of this repository.
