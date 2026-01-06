@@ -62,9 +62,6 @@ conda activate otca
 # Install core dependencies
 pip install -r requirements.txt
 ```
-### Step 4: Prepare Datasets
-Download MMWHS dataset: [BraTS 2021 Official Website](https://www.med.upenn.edu/cbica/brats2021/data.html)
-Download TCIA-LGG: [TCIA Data Portal](https://www.cancerimagingarchive.net/)
 
 ### Step 4: Prepare Datasets
 - Download **MM-WHS Dataset**: The preprocessed version used in this work is derived from the resource provided in the paper *Enhancing Cross-Modal Medical Image Segmentation through Compositionality*. We sincerely acknowledge the authors for making their preprocessed data publicly available, which greatly facilitates our research.  (https://github.com/Trustworthy-AI-UU-NKI/Cross-Modal-Segmentation)
@@ -81,7 +78,8 @@ data/MMWHS_process
     └── images/          # MMWHS MRI images (NIfTI format)
 ```
 ## Usage
-All core scripts are in the scripts/ directory. Modify hyperparameters in configs/main_config.yaml before running.
+All core codes of this project will be publicly released in the GitHub repository soon after acceptance of our paper. 
+<!--All core scripts are in the scripts/ directory. Modify hyperparameters in configs/main_config.yaml before running.
 
 ## Training
 Train the NMF-OT UDA model on BraTS 2021 (source) and TCIA-LGG (target):
@@ -108,7 +106,7 @@ python scripts/evaluate.py \
   --gt_dir data/target_tcia_lgg/labels \
   --metrics dsc iou hd95
 ```
-Evaluation results are saved to results/evaluation_metrics.csv
+Evaluation results are saved to results/evaluation_metrics.csv -->
 
 <!-- ## Citation
 If this work contributes to your research, please cite our paper:
@@ -126,7 +124,7 @@ bibtex
 -->
 
 ## Acknowledgements
-%This research is supported by the National Natural Science Foundation of China (Grant No. 12345678).
+<!--This research is supported by the National Natural Science Foundation of China (Grant No. 12345678).-->
 We thank the MM-WHS Challenge, CHAOS Challenge, Synapse, and TCIA consortia for providing open access to medical image datasets. The preprocessed MM-WHS dataset used in this work is derived from the resource provided in the paper *Enhancing Cross-Modal Medical Image Segmentation through Compositionality*, and we sincerely acknowledge its authors for making the data publicly available.
 We use the POT (Python Optimal Transport) library for optimal transport computations and MONAI for medical image preprocessing and analysis.
 Special thanks to the open-source community for the existing unsupervised domain adaptation (UDA) baselines, which laid a solid foundation for this research.
