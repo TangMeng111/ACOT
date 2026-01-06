@@ -48,14 +48,14 @@ Ensure you have the following installed:
 ### Step 1: Clone the Repository
 ```bash
 git clone https://github.com/TangMeng111/OTCA.git
-cd medical-image-uda
+cd OTCA_main
 ```
 ### Step 2: Create a Conda Environment
 ```bash
 # Create environment
-conda create -n medical-uda python=3.8
+conda create -n otca python=3.8
 # Activate environment
-conda activate medical-uda
+conda activate otca
 ```
 ### Step 3: Install Dependencies
 ```bash
@@ -63,17 +63,22 @@ conda activate medical-uda
 pip install -r requirements.txt
 ```
 ### Step 4: Prepare Datasets
-Download BraTS 2021: [BraTS 2021 Official Website](https://www.med.upenn.edu/cbica/brats2021/data.html)
+Download MMWHS dataset: [BraTS 2021 Official Website](https://www.med.upenn.edu/cbica/brats2021/data.html)
 Download TCIA-LGG: [TCIA Data Portal](https://www.cancerimagingarchive.net/)
 
-Organize data into the following structure (create folders if missing):
+### Step 4: Prepare Datasets
+- Download **MM-WHS Dataset**: The preprocessed version used in this work is derived from the resource provided in the paper *Enhancing Cross-Modal Medical Image Segmentation through Compositionality*. We sincerely acknowledge the authors for making their preprocessed data publicly available, which greatly facilitates our research.  (https://github.com/Trustworthy-AI-UU-NKI/Cross-Modal-Segmentation)
+- Download **CHAOS Dataset**: [ISBI 2019 CHAOS Challenge Portal](https://chaos.grand-challenge.org/)
+- Download **Synapse Dataset**: [MICCAI 2015 Synapse (SABS) Repository](https://www.synapse.org/#!Synapse:syn3193805/wiki/89480)
+
+Take the **MM-WHS Dataset** (preprocessed version) as an example, and organize the data into the following structure (create folders if missing):
 ```plaintext
-data/
-├── source_brats2021/
-│   ├── images/          # BraTS 2021 MRI images (NIfTI format)
-│   └── labels/          # BraTS 2021 manual annotations
-└── target_tcia_lgg/
-    └── images/          # TCIA-LGG MRI images (NIfTI format)
+data/MMWHS_process
+├── CT_withGT_proc/
+│   ├── images/          # MMWHS CT images (NIfTI format)
+│   └── labels/          # manual annotations
+└── MR_withMR_proc/
+    └── images/          # MMWHS MRI images (NIfTI format)
 ```
 ## Usage
 All core scripts are in the scripts/ directory. Modify hyperparameters in configs/main_config.yaml before running.
@@ -121,12 +126,10 @@ bibtex
 -->
 
 ## Acknowledgements
-This research is supported by the National Natural Science Foundation of China (Grant No. 12345678).
-We thank the BraTS and TCIA consortia for providing open access to medical image datasets.
-We use the POT (Python Optimal Transport) library for OT computations and MONAI for medical image processing.
-Special thanks to the open-source community for the UNet implementation and UDA baselines.
-
+%This research is supported by the National Natural Science Foundation of China (Grant No. 12345678).
+We thank the MM-WHS Challenge, CHAOS Challenge, Synapse, and TCIA consortia for providing open access to medical image datasets. The preprocessed MM-WHS dataset used in this work is derived from the resource provided in the paper *Enhancing Cross-Modal Medical Image Segmentation through Compositionality*, and we sincerely acknowledge its authors for making the data publicly available.
+We use the POT (Python Optimal Transport) library for optimal transport computations and MONAI for medical image preprocessing and analysis.
+Special thanks to the open-source community for the existing unsupervised domain adaptation (UDA) baselines, which laid a solid foundation for this research.
 ## License
-This project is licensed under the MIT License - see the LICENSE file for details. The MIT License allows free use, modification, and distribution for both commercial and non-commercial purposes.
-
+This project is licensed under the [MIT License](LICENSE). For detailed terms, please refer to the [LICENSE](LICENSE) file in the root directory of this repository.
 
