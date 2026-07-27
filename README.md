@@ -1,4 +1,4 @@
-# OTCA: Unsupervised Domain Adaptation for Cross-Modal Medical Image Segmentation via OT-Based Concept Alignment
+# Annotation-Free Concept Discovery and Optimal-Transport Alignment for Unsupervised Domain Adaptation in Medical Image Segmentation
 > An Easy Implementation for unsupervised domain adaptation in medical image segmentation, combining Non-negative Matrix Factorization (NMF) and Optimal Transport (OT) for cross-domain concept alignment.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -23,19 +23,20 @@
 -->
 
 ## Overview
-This project addresses the domain shift challenge in medical image segmentation, where models trained on labeled source domains fail to generalize to unlabeled target domains. We propose a novel unsupervised domain adaptation (UDA) approach that leverages:
-- **Non-negative Matrix Factorization (NMF)** to extract semantic concepts from medical images.
+This project addresses the domain shift challenge in medical image segmentation, where models trained on labeled source domains fail to generalize to unlabeled target domains. We propose a unsupervised domain adaptation (UDA) approach that leverages:
+- **Non-negative Matrix Factorization (NMF)** to extract annotation-free semantic concepts from medical images.
 - **Optimal Transport (OT)** to align these concepts across source and target domains without target annotations.
 
-![Framework Architecture for NMF-OT Concept Alignment](imgs/framework_architecture.png)
+![Framework Architecture for NMF-OT Concept Alignment](framework_architecture.png)
 *Figure 1: Schematic diagram of our NMF-OT based unsupervised domain adaptation framework.
 
 
 ## Key Features
 - 🚀 **Efficient Concept Alignment**: Outperforms traditional UDA methods (DANN, CycleGAN) by 8-12% in DSC on medical image segmentation tasks.
-- 📊 **NMF + OT Alignment**: Learnable NMF for concept extraction + OT loss for cross-domain (MR→CT) alignment.
-- 📏 **Boundary Precision**: SDM loss with class-specific weights to prioritize thin structures (e.g., myocardium).
-- ⏱️ **Adaptive Early Stopping**: Stops training when OT loss reduction is < 0.001 for 5 consecutive checks (configurable).
+- 📊 **NMF + OT Alignment**: Learnable NMF for concept extraction + OT loss for cross-domain alignment.
+- 🎯 **Boundary Loss and Target-Domain Self-Training Loss**: Employs an SDM-based boundary loss to improve boundary localization and a unified target-domain self-training loss that combines consistency regularization with pseudo-label supervision.
+- 📐 **Theoretical Foundation**: Derives a dense-segmentation UDA risk bound that connects source-domain supervision and Wasserstein concept alignment to target-domain risk.
+- 🧠 **Extensive and Backbone-Agnostic Validation**: Evaluated on five public datasets covering cardiac, abdominal multi-organ, and brain-tumor segmentation, and consistently improves six CNN- and Transformer-based backbones.
 
 
 ## Installation
@@ -47,15 +48,15 @@ Ensure you have the following installed:
 
 ### Step 1: Clone the Repository
 ```bash
-git clone https://github.com/TangMeng111/OTCA.git
-cd OTCA_main
+git clone https://github.com/TangMeng111/ACOT.git
+cd ACOT_main
 ```
 ### Step 2: Create a Conda Environment
 ```bash
 # Create environment
-conda create -n otca python=3.8
+conda create -n ACOT python=3.8
 # Activate environment
-conda activate otca
+conda activate ACOT
 ```
 ### Step 3: Install Dependencies
 ```bash
